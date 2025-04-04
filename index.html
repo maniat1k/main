@@ -1,10 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Mi Web en GitHub Pages</title>
+  <meta charset="UTF-8">
+  <title>bitácora.log</title>
+  <link rel="icon" href="https://emojicdn.elk.sh/🐱" type="image/png">
+  <style>
+    body {
+      background: black;
+      color: #00FF00;
+      font-family: monospace;
+      margin: 0;
+      padding: 2rem;
+      text-shadow: 0 0 5px #00FF00;
+    }
+
+    .contenedor {
+      max-width: 800px;
+      margin: auto;
+      border: 1px solid #00FF00;
+      padding: 2rem;
+      background: rgba(0,0,0,0.85);
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    ul {
+      list-style-type: "> ";
+      padding-left: 1rem;
+    }
+
+    a {
+      color: #00FF00;
+      text-decoration: underline;
+    }
+
+    .cursor {
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      text-align: center;
+      opacity: 0.7;
+    }
+  </style>
 </head>
 <body>
-  <h1>¡Hola Mundo!</h1>
-  <p>Bienvenido a mi sitio web alojado en GitHub Pages.</p>
+  <div class="contenedor">
+    <h1>~ bitácora.log <span class="cursor">█</span></h1>
+    <p>Este es mi espacio de escritura. Reflexiones, ideas y código.</p>
+
+    <h2>$ ls posts/</h2>
+    <ul>
+      <li><a href="posts/2025-04-04-mi-primer-post.html">2025-04-04 Mi primer post</a></li>
+    </ul>
+
+    <footer>
+      <p>Volver a <a href="https://maniat1k.github.io/">codigopersonal</a></p>
+    </footer>
+  </div>
 </body>
 </html>
