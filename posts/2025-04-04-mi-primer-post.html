@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>2025-04-04 – Mi primer post</title>
+  <link rel="icon" href="https://emojicdn.elk.sh/🐱" type="image/png">
+  <style>
+    body {
+      background: black;
+      color: #00FF00;
+      font-family: monospace;
+      margin: 0;
+      padding: 2rem;
+      text-shadow: 0 0 5px #00FF00;
+    }
+
+    .contenedor {
+      max-width: 800px;
+      margin: auto;
+      border: 1px solid #00FF00;
+      padding: 2rem;
+      background: rgba(0,0,0,0.85);
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    pre {
+      background-color: black;
+      border: 1px solid #00FF00;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+
+    code {
+      color: #00FF00;
+    }
+
+    a {
+      color: #00FF00;
+      text-decoration: underline;
+    }
+
+    .cursor {
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      text-align: center;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <h1>~ bitácora.log/2025-04-04-mi-primer-post <span class="cursor">█</span></h1>
+
+    <p>&gt; Bienvenido a mi bitácora digital, estilo consola.</p>
+
+    <p>
+      Esta es la primera entrada de este experimento: una especie de diario técnico minimalista, donde voy a registrar cosas que voy haciendo, rompiendo y reparando. Si algo me sirvió o me gustó, probablemente termine escribiéndolo acá.
+    </p>
+
+    <h2>$ propósito</h2>
+    <p>
+      Este espacio está conectado a mi sitio <a href="https://maniat1k.github.io">codigopersonal</a>, y la idea es tener algo más liviano que un blog tradicional, pero más personal que solo tuitear o compartir código en GitHub.
+    </p>
+    <p>
+      Voy a escribir:
+      <ul>
+        <li>Lo que voy subiendo a mis repos</li>
+        <li>Tips y fragmentos de código útil</li>
+        <li>Errores comunes que me crucé (y cómo los arreglé)</li>
+        <li>Cosas que estoy aprendiendo o probando</li>
+      </ul>
+    </p>
+
+    <h2>$ ejemplo</h2>
+    <p>
+      Por ejemplo, hoy mismo trabajé en integrar un dropdown flotante que carga mis últimos posts de Reddit directamente en mi landing page. Usé la API pública de Reddit, un poco de CSS y vanilla JS. Se ve así:
+    </p>
+
+    <pre><code>fetch("https://www.reddit.com/user/maniat1k13/submitted.json")
+  .then(res =&gt; res.json())
+  .then(data =&gt; {
+    const posts = data.data.children.slice(0, 5);
+    // Luego se inyectan al HTML con formato retro
+  });</code></pre>
+
+    <p>
+      Y el resultado es un botón flotante arriba a la derecha que muestra los títulos y subreddits donde posteo. Una mezcla entre blog visual y consola hacker 🐱‍💻
+    </p>
+
+    <h2>$ interacción</h2>
+    <p>
+      No tengo comentarios activados directamente en esta página (todavía), pero <strong>voy a usar Reddit como zona de intercambio</strong>. Ya que tengo el menú integrado, si querés leer o comentar algo mío, es probable que lo encuentres ahí. Jugamos ahí.
+    </p>
+    <p>
+      Podés ver mis publicaciones en:  
+      👉 <a href="https://reddit.com/user/maniat1k13" target="_blank">reddit.com/user/maniat1k13</a>
+    </p>
+
+    <h2>$ conclusión</h2>
+    <p>
+      Esto es un ensayo. Un experimento. Como todo buen script, irá cambiando.  
+      Si llegaste hasta acá: gracias por leer.
+    </p>
+    <p>
+      > ~ Marcelo ☕
+    </p>
+
+    <div style="margin: 2rem 0; text-align: center;">
+      <a href="https://ko-fi.com/marcelolemos" target="_blank">
+        <img src="https://storage.ko-fi.com/cdn/kofi5.png" alt="Ko-fi" style="height: 40px; border: none; box-shadow: 0 0 10px #00FF00; border-radius: 6px;">
+      </a>
+    </div>
+
+    <h2>$ comentarios</h2>
+    <script src="https://utteranc.es/client.js"
+        repo="maniat1k/main"
+        issue-term="pathname"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    <footer>
+      <p><a href="../index.html">&lt;&lt; Volver a la bitácora</a></p>
+    </footer>
+  </div>
+</body>
+</html>
