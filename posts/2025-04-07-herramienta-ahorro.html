@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>2025-04-07 – Herramienta de ahorro automatizado</title>
+  <link rel="icon" href="https://emojicdn.elk.sh/💸" type="image/png">
+  <style>
+    body {
+      background: black;
+      color: #00FF00;
+      font-family: monospace;
+      margin: 0;
+      padding: 2rem;
+      text-shadow: 0 0 5px #00FF00;
+    }
+
+    .contenedor {
+      max-width: 800px;
+      margin: auto;
+      border: 1px solid #00FF00;
+      padding: 2rem;
+      background: rgba(0,0,0,0.85);
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    pre {
+      background-color: black;
+      border: 1px solid #00FF00;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+
+    code {
+      color: #00FF00;
+    }
+
+    a {
+      color: #00FF00;
+      text-decoration: underline;
+    }
+
+    .cursor {
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      text-align: center;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <h1>~ bitácora.log/2025-04-07-herramienta-ahorro <span class="cursor">█</span></h1>
+
+    <p>&gt; Hoy desarrollé una herramienta simple pero poderosa para planificar ahorros y simular inversiones.</p>
+
+    <h2>$ objetivo</h2>
+    <p>
+      Crear una <a href="https://maniat1k.github.io/ahorro.html" target="_blank">calculadora de ahorro</a> visual, amigable y funcional que me permita:
+      <ul>
+        <li>Establecer una meta de ahorro</li>
+        <li>Definir cuánto y con qué frecuencia voy a ahorrar</li>
+        <li>Ver cuánto tiempo me llevará llegar a la meta</li>
+        <li>Simular una inversión a plazo fijo con tasa editable</li>
+        <li>Ver el equivalente en USD automáticamente</li>
+      </ul>
+    </p>
+
+    <h2>$ tecnologías</h2>
+    <p>
+      El desarrollo fue 100% con HTML, CSS y JS. Sin frameworks. Agregué también una gráfica con <code>Chart.js</code> para visualizar el progreso del ahorro, y todo corre directamente desde GitHub Pages.
+    </p>
+
+    <h2>$ snippet</h2>
+    <p>
+      Una de las funciones que necesitaba era poder tomar los valores aunque el usuario escriba "10.000" (con punto de miles), y convertirlo bien a número:
+    </p>
+
+    <pre><code>function parseNumber(input) {
+  return parseFloat((input || '').replace(/\./g, '').replace(',', '.')) || 0;
+}</code></pre>
+
+    <p>
+      Además, añadí conversión automática a USD con una cotización editable (por defecto: BROU).
+    </p>
+
+    <h2>$ resultado</h2>
+    <p>
+      Podés probarlo acá 👉 <a href="https://maniat1k.github.io/ahorro.html" target="_blank">https://maniat1k.github.io/ahorro.html</a>
+    </p>
+    <p>
+      La idea es seguir mejorando esto a futuro: guardar los valores, ver comparativas por bancos, y quizás conectarlo a una API real.
+    </p>
+
+    <div style="margin: 2rem 0; text-align: center;">
+      <a href="https://ko-fi.com/marcelolemos" target="_blank">
+        <img src="https://storage.ko-fi.com/cdn/kofi5.png" alt="Ko-fi" style="height: 40px; border: none; box-shadow: 0 0 10px #00FF00; border-radius: 6px;">
+      </a>
+    </div>
+
+    <h2>$ comentarios</h2>
+    <script src="https://utteranc.es/client.js"
+        repo="maniat1k/main"
+        issue-term="pathname"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    <footer>
+      <p><a href="../index.html">&lt;&lt; Volver a la bitácora</a></p>
+    </footer>
+  </div>
+</body>
+</html>
