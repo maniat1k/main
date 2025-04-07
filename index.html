@@ -58,13 +58,42 @@
     <p>Este es mi espacio de escritura. Reflexiones, ideas y código.</p>
 
     <h2>$ ls posts/</h2>
-    <ul>
-      <li><a href="posts/2025-04-04-mi-primer-post.html">2025-04-04 Mi primer post</a></li>
+    <ul id="lista-posts">
+      <li>Cargando posts...</li>
     </ul>
 
     <footer>
       <p>Volver a <a href="https://maniat1k.github.io/">codigopersonal</a></p>
     </footer>
   </div>
+
+  <script>
+    fetch("https://api.github.com/repos/maniat1k/main/contents/posts")
+      .then(res => res.json())
+      .then(files => {
+        const ul = document.getElementById("lista-posts");
+        ul.innerHTML = ""; // limpiar el texto de "Cargando posts..."
+        files
+          .filter(file => file.name.endsWith(".html"))
+          .sort((a, b) => b.name.localeCompare(a.name)) // más recientes primero
+          .forEach(file => {
+            const nombreLegible = file.name
+              .replace(".html", "")
+              .replace(/-/g, " ")
+              .replace(/\\b(\\d{4}) (\\d{2}) (\\d{2})\\b/, "$1-$2-$3");
+
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = `posts/${file.name}`;
+            a.textContent = nombreLegible;
+            li.appendChild(a);
+            ul.appendChild(li);
+          });
+      })
+      .catch(err => {
+        const ul = document.getElementById("lista-posts");
+        ul.innerHTML = '<li>Error al cargar posts</li>';
+      });
+  </script>
 </body>
 </html>
